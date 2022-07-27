@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng-testing-july2022';
+  title = 'My Unit Testing App!';
+  appName = 'Angular Unit Testing Demo';
 }

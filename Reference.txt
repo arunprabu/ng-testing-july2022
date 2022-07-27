@@ -1,0 +1,99 @@
+
+
+Traditional S/W Dev Methodology 
+--
+  Analysis 
+    Design 
+      Development 
+        Testing 
+          Deployment 
+            Maintanance 
+
+  Project: Calc App 
+  Resources: FRD, HLD, LLD 
+
+  Dev => QA => (bugs) => Dev => QA => (bugs) => Dev => QA => (bugs) => Dev => QA => (QA PASSED) => Deployment 
+
+--
+  Development
+  --
+    function add(a, b){
+      return a + b;
+    }
+
+    add(10, 20); // 30 
+
+  QA 
+  --
+    add(10, 5); // 15
+    add("10", 1); // '101'  [BUG]
+    add("ABC", "xyz"); // 'ABCxyz'  [ BUG]
+
+    Resource: Test Cases 
+    ---
+      Test Case #1: inputs should be numbers [BUG]
+      Test Case #2: output should also be number [BUG]
+      Test Case #3: add button should be disabled if invalid inputs are entered
+
+  Bug Fix
+  ---
+    function add(a: number, b: number): number{
+      return a + b;
+    }
+
+    add(10, 20); // 30 
+    
+
+Modern S/W Dev Methodologies 
+--
+
+  devs write test cases => devs write the functionality => (Tools) => Instant Feedback of Success/Failure 
+
+
+  1. Test Driven Development 
+      
+  2. Behavior Driven Development
+
+
+Automated Testing 
+--
+  0. Static Type Checking 
+      Tools: TypeScript, FlowJS / PropTypes 
+
+  1. Unit Testing 
+      * Testing small independent units of the component 
+      * Individual units are tests 
+      * Bug Reduction Density: 40% - 80%
+
+      Tools: Karma (Test runner) + JasmineJS (Unit Testing Framework)
+
+  2. Integration Testing 
+      * different units, services or components are tested as combined entity 
+      * Behavior of the app is tested 
+      * to expose issues in the integrations between multiple units 
+      * Examples: testing if a child component can update context data in a parent comp 
+
+      Tools: Karma (Test runner) + JasmineJS (Unit Testing Framework)
+
+  3. End to End Testing (e2e) / Functional Testing 
+      * testing the whole app 
+      * Usually multi-step test 
+      * tests are done in simulated browser 
+      Example: testing the whole signup flow 
+  
+      Tools: Protractor, CypressJS, Selenium 
+
+
+---
+
+// Where to write Test cases?
+// How to write Test Cases?
+// How to test our functionality against the test cases identified? 
+
+
+// Testing Pattern: Given/When/Then 
+// Quick Intro to Tools [DONE]
+// File walkthru [DONE]
+
+
+
