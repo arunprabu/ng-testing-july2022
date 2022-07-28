@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { AboutComponent } from './about.component';
 
@@ -33,6 +34,43 @@ describe('AboutComponent', () => {
 
   // TODO: Testing css class 'myPara' in a <p> tag
   
+  // counter value defaults to 0
+  it('has default counter value 0', () => {
+    expect(component.counterValue).toEqual(0);
+  });
 
+  it('should increment counter value', () => {
+    component.handleIncrement(); // calling method
+    expect(component.counterValue).toEqual(1);
+
+    component.handleDecrement(); // calling method
+    expect(component.counterValue).toEqual(0);
+  });
+
+  // Handling events thru html 
+  it('should increment value in html template', () => {
+    fixture.debugElement.query(By.css('.incrementBtn')).triggerEventHandler('click', null);
+    
+    // to detect the changes in html
+    fixture.detectChanges();
+    const cValue = fixture.debugElement.query(By.css('.counterTxt')).nativeElement.innerText;
+    expect(cValue).toEqual('1');
+  });
+
+  // TODO: should decrement value in html template
+
+  it('should stop at 10 and show Maximum Reached upon increment', () => {
+    component.counterValue = 10;
+    fixture.debugElement.query(By.css('.incrementBtn')).triggerEventHandler('click', null);
+    fixture.detectChanges();
+    const cValue = fixture.debugElement.query(By.css('.counterTxt')).nativeElement.innerText;
+    expect(cValue).toEqual('10');
+
+    const msg = fixture.debugElement.query(By.css('.counterInfoEl')).nativeElement.innerText;
+    expect(msg).toEqual('Maximum Reached');
+  });
+
+  // TODO: should stop at 0 and show Minimum Reached upon decrement
+  
 
 });

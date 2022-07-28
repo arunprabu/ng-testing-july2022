@@ -2,6 +2,17 @@
   <h2 
   style="background-color: rgb(255,0,0)">
   About Unit Testing | Testing Styles, Counter with event handlers</h2>
+
+  <p>
+    Counter: 
+    <span class="counterTxt">{{counterValue}}</span>
+  </p>
+  <p class="counterInfoEl">{{counterInfo}}</p>
+
+  <button type="button" class="incrementBtn"
+    (click)="handleIncrement()">+</button>
+  <button type="button" 
+    (click)="handleDecrement()">-</button>
 </div>
 
 
