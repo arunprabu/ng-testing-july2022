@@ -1,0 +1,17 @@
+<div>
+  <h2>Users | Testing Lifecycle Hook - ngOnInit</h2>
+
+  <div *ngIf="isLoading; else usersContainer" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <ng-template #usersContainer>
+    <p>Users Found: {{userList.length}}</p>
+  
+    <div style="border-bottom:solid 1px #ccc" *ngFor="let user of userList">
+      <h3>#{{user.id}} {{user.name}}</h3>
+      <p>Phone: {{user.phone}}</p>
+      <p>Email: {{user.email}}</p>
+    </div>
+  </ng-template>
+
+</div>
