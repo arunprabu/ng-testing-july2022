@@ -1,0 +1,9 @@
+<div>
+  <h2>Todos | Testing REST API Call with Mocking</h2>
+
+  <div class="card card-body mb-3" *ngFor="let todo of todoList">
+    <p>#{{todo.id}} {{todo.title}}</p>
+    <span>Status: {{todo.completed? 'Completed': 'Not Completed'}}</span>
+  </div>
+
+</div>

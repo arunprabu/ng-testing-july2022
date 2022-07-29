@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { UsersComponent } from './users/users.component';
+import { TodosComponent } from './todos/todos.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { UsersComponent } from './users/users.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    UsersComponent
+    UsersComponent,
+    TodosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
